@@ -8,6 +8,6 @@ redirect_from:
 ---
 
 个人笔记
-<embed src="/talkmap/数理统计笔记.pdf" type="application/pdf" width="100%" height="600px" />
-请<a href="/talkmap/数理统计笔记.pdf">点击此处下载</a>。
-</iframe>
+
+1. <a href="/数理统计笔记.pdf">数理统计笔记</a>。
+
