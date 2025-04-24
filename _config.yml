@@ -13,7 +13,7 @@ title                    : "知北游的个人主页"
 title_separator          : "-"
 name                     : &name "知北游"
 description              : &description "personal description"
-url                      : https://9024yuy.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
+url                      : https://9024yuy.github.io/ # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
 
@@ -22,7 +22,7 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "./wallhaven-vqeg9m.jpg"
+  avatar           : "/wallhaven-vqeg9m.jpg"
   name             : "徐知南而北游"
   pronouns         : # example: "she/her"  
   bio              : #"Short biography for the left-hand sidebar"
