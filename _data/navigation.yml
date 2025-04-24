@@ -9,8 +9,8 @@
 
 main:
        
-  - title: "Notes"
-    url: /sitemap/
+  #- title: "Notes"
+  # url: /sitemap/
         
   - title: "CV"
     url: /cv/
