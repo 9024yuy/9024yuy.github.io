@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: "个人简介"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -9,7 +9,6 @@ redirect_from:
 
 {% include base_path %}
 
-Education
 ======
 * 西安交通大学，2023-至今
 
