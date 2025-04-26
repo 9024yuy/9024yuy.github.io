@@ -10,7 +10,9 @@ redirect_from:
 个人笔记
 
 1. <a href="/数理统计笔记.pdf">数理统计笔记</a>
-
+主要参考：老师上课ppt板书，茆诗松《高等数理统计》，George Casella《Statistical Inference》
+2. <a href="/实变函数.pdf">实变函数笔记</a>
+主要参考：周民强《实变函数论》
 
 
 
