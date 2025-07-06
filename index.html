@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>徐知南而北游 - 个人主页</title>
+  <title>徐知南而北游 - 数学专业个人主页</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
@@ -319,15 +319,38 @@
       border-radius: 6px;
     }
     
-    .pdf-preview img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
+    .pdf-preview .lines {
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
     
-    .pdf-card:hover .pdf-preview img {
-      transform: scale(1.05);
+    .pdf-preview .line {
+      height: 7px;
+      background: rgba(52, 152, 219, 0.15);
+      border-radius: 4px;
+    }
+    
+    .pdf-preview .line:nth-child(1) { width: 95%; background: rgba(52, 152, 219, 0.3); }
+    .pdf-preview .line:nth-child(2) { width: 85%; }
+    .pdf-preview .line:nth-child(3) { width: 92%; }
+    .pdf-preview .line:nth-child(4) { width: 78%; background: rgba(52, 152, 219, 0.3); }
+    .pdf-preview .line:nth-child(5) { width: 88%; }
+    .pdf-preview .line:nth-child(6) { width: 70%; }
+    
+    .pdf-icon {
+      position: absolute;
+      font-size: 3.5rem;
+      color: rgba(52, 152, 219, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .pdf-card:hover .pdf-icon {
+      transform: scale(1.1);
+      color: rgba(52, 152, 219, 0.15);
     }
     
     .pdf-info {
@@ -572,7 +595,8 @@
   <div class="container">
     <header>
       <div class="avatar-container">
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' fill='%233498db' opacity='0.1'/%3E%3Ccircle cx='80' cy='60' r='30' fill='%233498db' opacity='0.3'/%3E%3Crect x='50' y='100' width='60' height='40' fill='%233498db' opacity='0.4'/%3E%3C/svg%3E" alt="徐知南头像">
+        <!-- 头像已替换为您指定的路径 -->
+        <img src="figure/1cover.jpg" alt="徐知南头像">
       </div>
       <div class="header-content">
         <h1>徐知南而北游</h1>
@@ -585,8 +609,8 @@
           </span>
         </div>
       </div>
-    </header>   
-    <!-- 学习笔记板块 -->
+    </header>
+    <!-- 研究兴趣板块 -->
     <section class="section">
       <div class="section-header">
         <i class="fas fa-book"></i>
@@ -594,57 +618,84 @@
       </div>
       
       <div class="pdf-grid">
-        <!-- 复变函数 -->
         <div class="pdf-card">
           <div class="pdf-preview">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='170' viewBox='0 0 260 170'%3E%3Crect width='260' height='170' fill='%23f1f8ff'/%3E%3Ctext x='50%25' y='40%25' font-family='Arial' font-size='22' fill='%233498db' text-anchor='middle'%3E复变函数笔记预览%3C/text%3E%3Cpath d='M30,100 C60,70 90,130 120,100 C150,70 180,130 210,100' stroke='%233498db' stroke-width='2' fill='none'/%3E%3Ccircle cx='180' cy='80' r='8' fill='%23e74c3c'/%3E%3C/svg%3E" alt="复变函数笔记预览">
+            <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
+            <div class="lines">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
           </div>
           <div class="pdf-info">
             <div class="pdf-title"><i class="fas fa-file-alt"></i> 复变函数</div>
             <p>复变函数的积分理论、级数理论、几何理论</p>
-            <a href="#" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
+            <a href="PDF/复变函数.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
           </div>
         </div>
         
-        <!-- 实变函数 -->
         <div class="pdf-card">
           <div class="pdf-preview">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='170' viewBox='0 0 260 170'%3E%3Crect width='260' height='170' fill='%23e3f2fd'/%3E%3Ctext x='50%25' y='40%25' font-family='Arial' font-size='22' fill='%232c3e50' text-anchor='middle'%3E实变函数笔记预览%3C/text%3E%3Cpath d='M30,60 L230,60 M30,80 L230,80 M30,100 L230,100 M30,120 L230,120' stroke='%232c3e50' stroke-width='2'/%3E%3Crect x='50' y='135' width='160' height='15' fill='%233498db' opacity='0.7'/%3E%3C/svg%3E" alt="实变函数笔记预览">
+            <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
+            <div class="lines">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
           </div>
           <div class="pdf-info">
             <div class="pdf-title"><i class="fas fa-file-alt"></i> 实变函数</div>
             <p>欧氏空间上的Lebesgue测度理论、积分、微分以及函数空间</p>
-            <a href="#" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
+            <a href="PDF/实变函数.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
           </div>
         </div>
         
-        <!-- 常微分方程 -->
         <div class="pdf-card">
           <div class="pdf-preview">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='170' viewBox='0 0 260 170'%3E%3Crect width='260' height='170' fill='%23f1f8ff'/%3E%3Ctext x='50%25' y='40%25' font-family='Arial' font-size='22' fill='%23e74c3c' text-anchor='middle'%3E常微分方程笔记预览%3C/text%3E%3Cpath d='M30,80 Q80,40 130,80 T230,80' stroke='%23e74c3c' stroke-width='2' fill='none'/%3E%3Ccircle cx='80' cy='60' r='5' fill='%233498db'/%3E%3Ccircle cx='180' cy='100' r='5' fill='%233498db'/%3E%3C/svg%3E" alt="常微分方程笔记预览">
+            <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
+            <div class="lines">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
           </div>
           <div class="pdf-info">
             <div class="pdf-title"><i class="fas fa-file-alt"></i> 常微分方程</div>
             <p>初等积分法、解的存在唯一性定理、线性系统</p>
-            <a href="#" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
+            <a href="PDF/常微分方程.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
           </div>
         </div>
         
-        <!-- 随机过程 -->
         <div class="pdf-card">
           <div class="pdf-preview">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='170' viewBox='0 0 260 170'%3E%3Crect width='260' height='170' fill='%23e3f2fd'/%3E%3Ctext x='50%25' y='40%25' font-family='Arial' font-size='22' fill='%232c3e50' text-anchor='middle'%3E随机过程笔记预览%3C/text%3E%3Cpath d='M30,100 C40,60 60,140 90,100 C120,60 140,140 170,100 C200,60 220,140 230,100' stroke='%233498db' stroke-width='2' fill='none'/%3E%3Ccircle cx='150' cy='100' r='8' fill='%23e74c3c'/%3E%3C/svg%3E" alt="随机过程笔记预览">
+            <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
+            <div class="lines">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
           </div>
           <div class="pdf-info">
             <div class="pdf-title"><i class="fas fa-file-alt"></i> 随机过程</div>
             <p>Poisson过程、Brown运动、离散Markov过程</p>
-            <a href="#" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
+            <a href="PDF/随机过程.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
           </div>
         </div>
       </div>
     </section>
     
-    <!-- 联系板块 -->
     <section class="contact-section">
       <div class="section-header">
         <i class="fas fa-envelope"></i>
@@ -666,7 +717,7 @@
     
     <footer>
       <p>© 2025 徐知南而北游</p>
-      <p class="quote">"Wir müssen wissen, Wir werden wissen." — David Hilbert</p>
+      <p style="margin-top: 20px; color: #95a5a6;">"Wir müssen wissen, Wir werden wissen." — David Hilbert</p>
     </footer>
   </div>
 
@@ -704,4 +755,4 @@
     });
   </script>
 </body>
-</html>
+</html> 
