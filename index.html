@@ -268,6 +268,11 @@
       padding: 25px 15px;
       transition: all 0.3s ease;
       border: 1px solid #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
     }
     
     .contact-card:hover {
@@ -281,15 +286,30 @@
       margin-bottom: 15px;
     }
     
-    .contact-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: #2c3e50;
-    }
-    
     .contact-card p {
       color: #555;
       font-size: 1rem;
+    }
+    
+    .zhihu-card {
+      cursor: pointer;
+    }
+    
+    .zhihu-card::after {
+      content: '点击访问知乎主页';
+      position: absolute;
+      bottom: -25px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #3498db;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .zhihu-card:hover::after {
+      opacity: 1;
     }
     
     footer {
@@ -338,6 +358,10 @@
       
       .section, .contact-section {
         padding: 20px;
+      }
+      
+      .zhihu-card::after {
+        bottom: -20px;
       }
     }
   </style>
@@ -453,27 +477,19 @@
       <div class="contact-grid">
         <div class="contact-card">
           <i class="fas fa-envelope"></i>
-          <h3>电子邮件</h3>
           <p>22576459241@qq.com</p>
         </div>
         
-        <div class="contact-card">
-          <i class="fab fa-github"></i>
-          <h3>GitHub</h3>
-          <p>github.com/xuzhinan</p>
-        </div>
-        
-        <div class="contact-card">
-          <i class="fas fa-graduation-cap"></i>
-          <h3>学术档案</h3>
-          <p>ResearchGate 个人主页</p>
+        <div class="contact-card zhihu-card" onclick="window.open('https://www.zhihu.com/people/67-65-95-19', '_blank')">
+          <i class="fab fa-zhihu"></i>
+          <p>zhihu.com/xuzhinan</p>
         </div>
       </div>
     </section>
     
     <footer>
       <p>© 2023 徐知南而北游 | 数学探索之旅</p>
-      <p><i class="fas fa-envelope"></i> xuzhinan@example.com | <i class="fab fa-github"></i> GitHub: xuzhinan</p>
+      <p><i class="fas fa-envelope"></i> xuzhinan@example.com | <i class="fab fa-zhihu"></i> xuzhinan</p>
       <p style="margin-top: 20px; color: #95a5a6;">"数学是无穷的科学" — 赫尔曼·外尔</p>
     </footer>
   </div>
@@ -497,6 +513,11 @@
       
       document.querySelectorAll('.section, .contact-section').forEach(section => {
         observer.observe(section);
+      });
+      
+      // 为知乎卡片添加点击事件（备用方案）
+      document.querySelector('.zhihu-card').addEventListener('click', function() {
+        window.open('https://www.zhihu.com/people/67-65-95-19', '_blank');
       });
     });
   </script>
