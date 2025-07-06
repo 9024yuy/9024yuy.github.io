@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>徐知南而北游 - 数学专业个人主页</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -14,25 +14,12 @@
     }
     
     body {
-      font-family: 'Roboto', 'Noto Serif SC', serif;
-      background: linear-gradient(135deg, #1a2a6c, #0d1b2a);
-      color: #e0e1dd;
+      font-family: 'Roboto', 'Noto Serif SC', sans-serif;
+      background: #f8f9fa;
+      color: #333;
       line-height: 1.6;
       min-height: 100vh;
       padding: 20px;
-      position: relative;
-      overflow-x: hidden;
-    }
-    
-    body::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/><text x="30" y="50" font-family="Arial" font-size="12" fill="rgba(255,255,255,0.03)">∫ ∑ π</text></svg>');
-      z-index: -1;
     }
     
     .container {
@@ -46,44 +33,36 @@
       padding: 40px 20px;
       margin-bottom: 30px;
       position: relative;
-      animation: fadeIn 1s ease;
-    }
-    
-    .header-content {
-      position: relative;
-      z-index: 2;
     }
     
     .avatar-container {
-      width: 150px;
-      height: 150px;
+      width: 140px;
+      height: 140px;
       margin: 0 auto 20px;
       border-radius: 50%;
       overflow: hidden;
-      border: 4px solid #415a77;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-      background: linear-gradient(45deg, #415a77, #1b263b);
+      border: 3px solid #2c3e50;
+      background: #e0e0e0;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     
     .avatar-placeholder {
-      color: #e0e1dd;
+      color: #2c3e50;
       font-size: 60px;
     }
     
     h1 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       margin-bottom: 10px;
-      color: #fff;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-      letter-spacing: 1px;
+      color: #2c3e50;
+      font-weight: 600;
     }
     
     .subtitle {
-      font-size: 1.4rem;
-      color: #a3b1c6;
+      font-size: 1.3rem;
+      color: #7f8c8d;
       margin-bottom: 10px;
       font-weight: 300;
     }
@@ -92,59 +71,41 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       font-size: 1.1rem;
-      color: #778da9;
+      color: #7f8c8d;
       margin-bottom: 20px;
     }
     
     .interests {
       max-width: 600px;
-      margin: 20px auto;
-      padding: 15px;
-      background: rgba(26, 38, 57, 0.7);
-      border-radius: 12px;
-      border-left: 4px solid #ff9e00;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      margin: 25px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      border-left: 4px solid #3498db;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
     
     .interests h3 {
-      margin-bottom: 10px;
-      color: #ff9e00;
+      margin-bottom: 12px;
+      color: #3498db;
       display: flex;
       align-items: center;
       gap: 8px;
     }
     
-    .math-symbols {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin: 20px 0;
-      flex-wrap: wrap;
+    .interests p {
+      color: #555;
+      line-height: 1.7;
     }
     
-    .symbol {
-      font-size: 2.5rem;
-      color: #ff9e00;
-      background: rgba(255, 158, 0, 0.1);
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-    
-    .notes-section {
-      background: rgba(26, 38, 57, 0.7);
-      border-radius: 15px;
+    .section {
+      background: #fff;
+      border-radius: 8px;
       padding: 30px;
       margin: 40px 0;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
     }
     
     .section-header {
@@ -153,17 +114,18 @@
       gap: 15px;
       margin-bottom: 30px;
       padding-bottom: 15px;
-      border-bottom: 2px solid #ff9e00;
+      border-bottom: 2px solid #3498db;
     }
     
     .section-header i {
-      font-size: 1.8rem;
-      color: #ff9e00;
+      font-size: 1.5rem;
+      color: #3498db;
     }
     
     .section-header h2 {
-      font-size: 2rem;
-      color: #fff;
+      font-size: 1.8rem;
+      color: #2c3e50;
+      font-weight: 600;
     }
     
     .pdf-grid {
@@ -174,23 +136,31 @@
     }
     
     .pdf-card {
-      background: rgba(31, 46, 69, 0.8);
-      border-radius: 12px;
+      background: #fff;
+      border-radius: 8px;
       overflow: hidden;
       transition: all 0.3s ease;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border: 1px solid #eee;
+      position: relative;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: cardAppear 0.6s forwards;
     }
     
+    .pdf-card:nth-child(1) { animation-delay: 0.1s; }
+    .pdf-card:nth-child(2) { animation-delay: 0.2s; }
+    .pdf-card:nth-child(3) { animation-delay: 0.3s; }
+    .pdf-card:nth-child(4) { animation-delay: 0.4s; }
+    
     .pdf-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-      border-color: rgba(255, 158, 0, 0.3);
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      border-color: #3498db;
     }
     
     .pdf-preview {
-      height: 180px;
-      background: linear-gradient(135deg, #415a77, #1b263b);
+      height: 160px;
+      background: #f1f8ff;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -205,8 +175,8 @@
       left: 10px;
       right: 10px;
       bottom: 10px;
-      border: 1px dashed rgba(255, 255, 255, 0.1);
-      border-radius: 5px;
+      border: 1px dashed rgba(52, 152, 219, 0.2);
+      border-radius: 4px;
     }
     
     .pdf-preview .lines {
@@ -215,26 +185,26 @@
       height: 80%;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
     
     .pdf-preview .line {
-      height: 8px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 4px;
+      height: 6px;
+      background: rgba(52, 152, 219, 0.15);
+      border-radius: 3px;
     }
     
-    .pdf-preview .line:nth-child(1) { width: 95%; }
+    .pdf-preview .line:nth-child(1) { width: 95%; background: rgba(52, 152, 219, 0.3); }
     .pdf-preview .line:nth-child(2) { width: 85%; }
     .pdf-preview .line:nth-child(3) { width: 92%; }
-    .pdf-preview .line:nth-child(4) { width: 78%; }
+    .pdf-preview .line:nth-child(4) { width: 78%; background: rgba(52, 152, 219, 0.3); }
     .pdf-preview .line:nth-child(5) { width: 88%; }
     .pdf-preview .line:nth-child(6) { width: 70%; }
     
     .pdf-icon {
       position: absolute;
-      font-size: 3.5rem;
-      color: rgba(255, 255, 255, 0.15);
+      font-size: 3rem;
+      color: rgba(52, 152, 219, 0.1);
     }
     
     .pdf-info {
@@ -242,54 +212,107 @@
     }
     
     .pdf-title {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: #2c3e50;
       display: flex;
       align-items: center;
       gap: 10px;
+      font-weight: 500;
+    }
+    
+    .pdf-info p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #555;
+      min-height: 70px;
     }
     
     .pdf-link {
       display: inline-block;
       margin-top: 15px;
-      padding: 10px 20px;
-      background: rgba(255, 158, 0, 0.15);
-      color: #ff9e00;
-      border-radius: 6px;
+      padding: 8px 18px;
+      background: #eaf6ff;
+      color: #3498db;
+      border-radius: 4px;
       text-decoration: none;
       font-weight: 500;
       transition: all 0.3s ease;
-      border: 1px solid rgba(255, 158, 0, 0.3);
+      border: 1px solid #d1e8ff;
+      font-size: 0.95rem;
     }
     
     .pdf-link:hover {
-      background: rgba(255, 158, 0, 0.25);
-      transform: translateY(-2px);
+      background: #d1e8ff;
     }
     
-    .pdf-link i {
-      margin-left: 5px;
+    .contact-section {
+      background: #fff;
+      border-radius: 8px;
+      padding: 30px;
+      margin: 40px 0;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+    
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+    
+    .contact-card {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 25px 15px;
+      transition: all 0.3s ease;
+      border: 1px solid #eee;
+    }
+    
+    .contact-card:hover {
+      transform: translateY(-3px);
+      border-color: #3498db;
+    }
+    
+    .contact-card i {
+      font-size: 2rem;
+      color: #3498db;
+      margin-bottom: 15px;
+    }
+    
+    .contact-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+    
+    .contact-card p {
+      color: #555;
+      font-size: 1rem;
     }
     
     footer {
       text-align: center;
       padding: 30px 0;
-      color: rgba(255, 255, 255, 0.6);
+      color: #7f8c8d;
       font-size: 0.9rem;
-      margin-top: 50px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 30px;
+      border-top: 1px solid #eee;
     }
     
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
+    .quote {
+      font-style: italic;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: #7f8c8d;
+      padding: 0 20px;
+      text-align: center;
+    }
+    
+    @keyframes cardAppear {
       to { opacity: 1; transform: translateY(0); }
-    }
-    
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0px); }
     }
     
     @media (max-width: 768px) {
@@ -302,15 +325,19 @@
       }
       
       h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
       }
       
       .subtitle {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
       }
       
-      .pdf-grid {
+      .pdf-grid, .contact-grid {
         grid-template-columns: 1fr;
+      }
+      
+      .section, .contact-section {
+        padding: 20px;
       }
     }
   </style>
@@ -325,7 +352,7 @@
       </div>
       <div class="header-content">
         <h1>徐知南而北游</h1>
-        <div class="subtitle">数学爱好者</div>
+        <div class="subtitle">数学探索者 · 理论研究者</div>
         <div class="university">
           <i class="fas fa-university"></i>
           <span>西安交通大学数学与统计学院 · 大二在读</span>
@@ -334,20 +361,11 @@
       
       <div class="interests">
         <h3><i class="fas fa-brain"></i> 研究兴趣</h3>
-        <p>分析，概率</p>
-      </div>
-      
-      <div class="math-symbols">
-        <div class="symbol">∫</div>
-        <div class="symbol">∑</div>
-        <div class="symbol">π</div>
-        <div class="symbol">∞</div>
-        <div class="symbol">σ</div>
-        <div class="symbol">∇</div>
+        <p>专注于数学分析、概率论及其应用领域的研究。目前探索方向包括泛函分析在概率空间中的应用、随机微分方程的稳定性理论，以及测度论与积分理论的现代发展。</p>
       </div>
     </header>
     
-    <section class="notes-section">
+    <section class="section">
       <div class="section-header">
         <i class="fas fa-book"></i>
         <h2>学习笔记与资源</h2>
@@ -368,7 +386,7 @@
           </div>
           <div class="pdf-info">
             <div class="pdf-title"><i class="fas fa-file-alt"></i> 复变函数</div>
-            <p>内容简介：复变函数的积分理论，级数理论，几何理论/p>
+            <p>深入探讨复变函数的积分理论、级数展开、几何理论以及留数定理的应用，包含解析函数的性质与边界行为。</p>
             <a href="PDF/复变函数.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
           </div>
         </div>
@@ -387,7 +405,7 @@
           </div>
           <div class="pdf-info">
             <div class="pdf-title"><i class="fas fa-file-alt"></i> 实变函数</div>
-            <p>内容简介：欧氏空间上的Lebesgue测度，积分，微分</p>
+            <p>系统整理欧氏空间上的Lebesgue测度理论、积分方法、微分理论以及函数空间的基本概念与应用实例。</p>
             <a href="PDF/实变函数.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
           </div>
         </div>
@@ -406,7 +424,7 @@
           </div>
           <div class="pdf-info">
             <div class="pdf-title"><i class="fas fa-file-alt"></i> 常微分方程</div>
-            <p>内容简介：初等积分法，解的存在唯一性定理，线性系统 </p>
+            <p>涵盖初等积分法、解的存在唯一性定理、线性系统理论、稳定性分析以及动力系统的基本概念。</p>
             <a href="PDF/常微分方程.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
           </div>
         </div>
@@ -425,35 +443,70 @@
           </div>
           <div class="pdf-info">
             <div class="pdf-title"><i class="fas fa-file-alt"></i> 随机过程</div>
-            <p>内容简介：Poisson过程，Brown运动，离散Markov过程</p>
-            <a href="PDF/概率论.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
+            <p>详细研究Poisson过程、Brown运动、离散Markov过程、鞅论基础以及随机微分方程初步。</p>
+            <a href="PDF/随机过程.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
           </div>
         </div>
       </div>
     </section>
     
+    <section class="contact-section">
+      <div class="section-header">
+        <i class="fas fa-envelope"></i>
+        <h2>联系与合作</h2>
+      </div>
+      
+      <div class="contact-grid">
+        <div class="contact-card">
+          <i class="fas fa-envelope"></i>
+          <h3>电子邮件</h3>
+          <p>xuzhinan@example.com</p>
+        </div>
+        
+        <div class="contact-card">
+          <i class="fab fa-github"></i>
+          <h3>GitHub</h3>
+          <p>github.com/xuzhinan</p>
+        </div>
+        
+        <div class="contact-card">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>学术档案</h3>
+          <p>ResearchGate 个人主页</p>
+        </div>
+      </div>
+    </section>
+    
+    <div class="quote">
+      "数学不是关于数字、方程、计算或算法，而是关于理解。理解隐藏在模式背后的结构，理解宇宙的语言。"
+    </div>
+    
     <footer>
       <p>© 2023 徐知南而北游 | 数学探索之旅</p>
-      <p><i class="fas fa-envelope"></i> contact@example.com | <i class="fab fa-github"></i> GitHub: xuzhinan</p>
-      <p style="margin-top: 15px; color: rgba(255,255,255,0.4);">"数学是无穷的科学" — 赫尔曼·外尔</p>
+      <p><i class="fas fa-envelope"></i> xuzhinan@example.com | <i class="fab fa-github"></i> GitHub: xuzhinan</p>
+      <p style="margin-top: 20px; color: #95a5a6;">"数学是无穷的科学" — 赫尔曼·外尔</p>
     </footer>
   </div>
 
   <script>
-    // 添加简单的动画效果
     document.addEventListener('DOMContentLoaded', function() {
+      // 卡片动画效果
       const cards = document.querySelectorAll('.pdf-card');
-      const symbols = document.querySelectorAll('.symbol');
-      
-      // 为PDF卡片添加延迟动画
       cards.forEach((card, index) => {
         card.style.animationDelay = `${index * 0.1}s`;
-        card.style.animation = 'fadeIn 0.5s ease forwards';
       });
       
-      // 为数学符号添加浮动效果
-      symbols.forEach((symbol, index) => {
-        symbol.style.animation = `float 3s ease-in-out ${index * 0.3}s infinite`;
+      // 添加滚动动画
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = `cardAppear 0.6s forwards`;
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      document.querySelectorAll('.section, .contact-section').forEach(section => {
+        observer.observe(section);
       });
     });
   </script>
