@@ -269,15 +269,15 @@
     
     .pdf-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
       margin-top: 20px;
     }
     
     .pdf-card {
       background: #fff;
       border-radius: 10px;
-      overflow: hidden;
+      padding: 25px;
       transition: all 0.4s ease;
       border: 1px solid #eaeaea;
       position: relative;
@@ -285,12 +285,17 @@
       transform: translateY(20px);
       animation: cardAppear 0.6s forwards;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
     
     .pdf-card:nth-child(1) { animation-delay: 0.1s; }
     .pdf-card:nth-child(2) { animation-delay: 0.2s; }
     .pdf-card:nth-child(3) { animation-delay: 0.3s; }
     .pdf-card:nth-child(4) { animation-delay: 0.4s; }
+    .pdf-card:nth-child(5) { animation-delay: 0.5s; }
+    .pdf-card:nth-child(6) { animation-delay: 0.6s; }
     
     .pdf-card:hover {
       transform: translateY(-8px);
@@ -298,88 +303,41 @@
       border-color: #3498db;
     }
     
-    .pdf-preview {
-      height: 170px;
-      background: linear-gradient(135deg, #f1f8ff 0%, #e3f2fd 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .pdf-preview::before {
-      content: '';
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      right: 10px;
-      bottom: 10px;
-      border: 1px dashed rgba(52, 152, 219, 0.2);
-      border-radius: 6px;
-    }
-    
-    .pdf-preview .lines {
-      position: absolute;
-      width: 80%;
-      height: 80%;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    
-    .pdf-preview .line {
-      height: 7px;
-      background: rgba(52, 152, 219, 0.15);
-      border-radius: 4px;
-    }
-    
-    .pdf-preview .line:nth-child(1) { width: 95%; background: rgba(52, 152, 219, 0.3); }
-    .pdf-preview .line:nth-child(2) { width: 85%; }
-    .pdf-preview .line:nth-child(3) { width: 92%; }
-    .pdf-preview .line:nth-child(4) { width: 78%; background: rgba(52, 152, 219, 0.3); }
-    .pdf-preview .line:nth-child(5) { width: 88%; }
-    .pdf-preview .line:nth-child(6) { width: 70%; }
-    
-    .pdf-icon {
-      position: absolute;
-      font-size: 3.5rem;
-      color: rgba(52, 152, 219, 0.1);
-      transition: all 0.3s ease;
-    }
-    
-    .pdf-card:hover .pdf-icon {
-      transform: scale(1.1);
-      color: rgba(52, 152, 219, 0.15);
-    }
-    
-    .pdf-info {
-      padding: 22px;
-    }
-    
     .pdf-title {
-      font-size: 1.25rem;
+      font-size: 1.4rem;
       margin-bottom: 15px;
       color: #2c3e50;
       display: flex;
       align-items: center;
       gap: 10px;
       font-weight: 600;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .pdf-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: #3498db;
+      border-radius: 2px;
     }
     
     .pdf-info p {
-      font-size: 1rem;
+      font-size: 1.05rem;
       line-height: 1.7;
       color: #555;
-      min-height: 80px;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+      flex-grow: 1;
     }
     
     .pdf-link {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-top: 10px;
       padding: 10px 20px;
       background: #eaf6ff;
       color: #3498db;
@@ -389,11 +347,31 @@
       transition: all 0.3s ease;
       border: 1px solid #d1e8ff;
       font-size: 1rem;
+      margin-top: auto;
+      width: fit-content;
     }
     
     .pdf-link:hover {
       background: #d1e8ff;
       transform: translateX(5px);
+    }
+    
+    .course-icon {
+      font-size: 1.6rem;
+      color: #3498db;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(52, 152, 219, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    
+    .pdf-card:hover .course-icon {
+      background: rgba(52, 152, 219, 0.2);
+      transform: scale(1.1);
     }
     
     .contact-section {
@@ -574,10 +552,6 @@
         font-size: 1.7rem;
       }
       
-      .pdf-info p {
-        min-height: auto;
-      }
-      
       .zhihu-card::after {
         bottom: 15px;
       }
@@ -595,7 +569,6 @@
   <div class="container">
     <header>
       <div class="avatar-container">
-        <!-- 头像已替换为您指定的路径 -->
         <img src="figure/1cover.jpg" alt="徐知南头像">
       </div>
       <div class="header-content">
@@ -610,7 +583,7 @@
         </div>
       </div>
     </header>
-    <!-- 研究兴趣板块 -->
+    
     <section class="section">
       <div class="section-header">
         <i class="fas fa-book"></i>
@@ -618,80 +591,64 @@
       </div>
       
       <div class="pdf-grid">
+        <!-- 复变函数 -->
         <div class="pdf-card">
-          <div class="pdf-preview">
-            <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
-            <div class="lines">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-            </div>
+          <div class="pdf-title">
+            <div class="course-icon"><i class="fas fa-infinity"></i></div>
+            <span>复变函数</span>
           </div>
-          <div class="pdf-info">
-            <div class="pdf-title"><i class="fas fa-file-alt"></i> 复变函数</div>
-            <p>复变函数的积分理论、级数理论、几何理论</p>
-            <a href="PDF/复变函数.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
-          </div>
+          <p>复变函数的积分理论、级数理论、几何理论。重点研究解析函数的性质，包括Cauchy积分定理、留数定理及其在实积分计算中的应用。</p>
+          <a href="PDF/复变函数.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
         </div>
         
+        <!-- 实变函数 -->
         <div class="pdf-card">
-          <div class="pdf-preview">
-            <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
-            <div class="lines">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-            </div>
+          <div class="pdf-title">
+            <div class="course-icon"><i class="fas fa-calculator"></i></div>
+            <span>实变函数</span>
           </div>
-          <div class="pdf-info">
-            <div class="pdf-title"><i class="fas fa-file-alt"></i> 实变函数</div>
-            <p>欧氏空间上的Lebesgue测度理论、积分、微分以及函数空间</p>
-            <a href="PDF/实变函数.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
-          </div>
+          <p>欧氏空间上的Lebesgue测度理论、积分、微分以及函数空间。深入探讨可测函数、Lebesgue积分及其与Riemann积分的区别。</p>
+          <a href="PDF/实变函数.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
         </div>
         
+        <!-- 常微分方程 -->
         <div class="pdf-card">
-          <div class="pdf-preview">
-            <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
-            <div class="lines">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-            </div>
+          <div class="pdf-title">
+            <div class="course-icon"><i class="fas fa-wave-square"></i></div>
+            <span>常微分方程</span>
           </div>
-          <div class="pdf-info">
-            <div class="pdf-title"><i class="fas fa-file-alt"></i> 常微分方程</div>
-            <p>初等积分法、解的存在唯一性定理、线性系统</p>
-            <a href="PDF/常微分方程.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
-          </div>
+          <p>初等积分法、解的存在唯一性定理、线性系统。涵盖一阶和高阶常微分方程的解法，以及微分方程的稳定性理论。</p>
+          <a href="PDF/常微分方程.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
         </div>
         
+        <!-- 随机过程 -->
         <div class="pdf-card">
-          <div class="pdf-preview">
-            <div class="pdf-icon"><i class="fas fa-file-pdf"></i></div>
-            <div class="lines">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
-            </div>
+          <div class="pdf-title">
+            <div class="course-icon"><i class="fas fa-random"></i></div>
+            <span>随机过程</span>
           </div>
-          <div class="pdf-info">
-            <div class="pdf-title"><i class="fas fa-file-alt"></i> 随机过程</div>
-            <p>Poisson过程、Brown运动、离散Markov过程</p>
-            <a href="PDF/随机过程.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
+          <p>Poisson过程、Brown运动、离散Markov过程。研究随机过程的性质，包括马尔可夫链、平稳过程和时间序列分析。</p>
+          <a href="PDF/随机过程.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        
+        <!-- 数理统计 -->
+        <div class="pdf-card">
+          <div class="pdf-title">
+            <div class="course-icon"><i class="fas fa-chart-bar"></i></div>
+            <span>数理统计</span>
           </div>
+          <p>统计推断、估计理论、假设检验。包括点估计、区间估计、假设检验的基本原理，以及回归分析和方差分析。</p>
+          <a href="PDF/数理统计.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        
+        <!-- 概率论 -->
+        <div class="pdf-card">
+          <div class="pdf-title">
+            <div class="course-icon"><i class="fas fa-dice"></i></div>
+            <span>概率论</span>
+          </div>
+          <p>概率空间、随机变量及其分布、极限定理。涵盖概率的基本公理、随机变量的分布函数、大数定律和中心极限定理。</p>
+          <a href="PDF/概率论.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-external-link-alt"></i></a>
         </div>
       </div>
     </section>
@@ -755,4 +712,4 @@
     });
   </script>
 </body>
-</html> 
+</html>
