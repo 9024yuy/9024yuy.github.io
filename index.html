@@ -19,6 +19,8 @@
       --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
       --shadow-hover: 0 12px 32px rgba(52, 152, 219, 0.15);
       --radius: 16px;
+      /* 小红书品牌色近似值，用于特殊hover效果，可选 */
+      --xhs-color: #ff2442; 
     }
 
     * {
@@ -284,7 +286,7 @@
     /* 联系区域 */
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 稍微调整宽度适应3个 */
       gap: 20px;
     }
 
@@ -330,6 +332,15 @@
       background: var(--accent-color);
       color: white;
       transform: scale(1.1);
+    }
+
+    /* 小红书悬停特效 */
+    .contact-card.xhs-card:hover .contact-icon-wrapper {
+        background: var(--xhs-color);
+    }
+    .contact-card.xhs-card:hover {
+        border-color: rgba(255, 36, 66, 0.2);
+        box-shadow: 0 12px 32px rgba(255, 36, 66, 0.15);
     }
 
     .contact-info {
@@ -420,8 +431,7 @@
           <span class="divider">·</span>
           <a href="https://math.xjtu.edu.cn/" target="_blank">数学与统计学院</a>
           <span class="divider">·</span>
-          <span>大二在读</span>
-        </div>
+          <span>大三在读</span> </div>
       </div>
     </header>
     
@@ -434,62 +444,52 @@
       </div>
       
       <div class="pdf-grid">
+        
         <div class="pdf-card" style="animation-delay: 0.1s;">
           <div class="card-header">
-            <div class="course-icon"><i class="fas fa-infinity"></i></div>
-            <span class="pdf-title">复分析</span>
+            <div class="course-icon"><i class="fas fa-chart-line"></i></div>
+            <span class="pdf-title">回归分析</span>
           </div>
-          <p>复函数的积分理论、级数理论、几何理论。目前完成：积分理论（部分）</p>
-          <a href="PDF/复变函数.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-arrow-right"></i></a>
+          <p>线性回归模型、最小二乘估计、诊断分析与模型选择。</p>
+          <a href="PDF/回归分析.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-arrow-right"></i></a>
         </div>
         
         <div class="pdf-card" style="animation-delay: 0.2s;">
           <div class="card-header">
-            <div class="course-icon"><i class="fas fa-calculator"></i></div>
-            <span class="pdf-title">实分析</span>
+            <div class="course-icon"><i class="fas fa-chart-bar"></i></div>
+            <span class="pdf-title">数理统计</span>
           </div>
-          <p>欧氏空间上的Lebesgue测度理论、积分、微分以及函数空间。目前完成：测度，可测函数，积分（部分）</p>
-          <div style="margin-top: auto; display: flex; gap: 10px; flex-wrap: wrap;">
-            <a href="PDF/实变函数.pdf" class="pdf-link" target="_blank">Part 1 <i class="fas fa-arrow-right"></i></a>
-            <a href="PDF/实变函数_part2.pdf" class="pdf-link" target="_blank">Part 2 <i class="fas fa-arrow-right"></i></a>
-          </div>
+          <p>包括点估计、区间估计、假设检验。目前完成：统计基础，点估计。</p>
+          <a href="PDF/数理统计.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-arrow-right"></i></a>
         </div>
         
         <div class="pdf-card" style="animation-delay: 0.3s;">
           <div class="card-header">
+            <div class="course-icon"><i class="fas fa-project-diagram"></i></div>
+            <span class="pdf-title">渐进统计</span>
+          </div>
+          <p>大样本性质、收敛模式、极大似然估计的渐进理论。</p>
+          <a href="PDF/渐进统计.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="pdf-card" style="animation-delay: 0.4s;">
+          <div class="card-header">
             <div class="course-icon"><i class="fas fa-wave-square"></i></div>
             <span class="pdf-title">常微分方程</span>
           </div>
-          <p>初等积分法、解的存在唯一性定理、线性系统</p>
+          <p>初等积分法、解的存在唯一性定理、线性系统。</p>
           <a href="PDF/常微分方程.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-arrow-right"></i></a>
-        </div>
-        
-        <div class="pdf-card" style="animation-delay: 0.4s;">
-          <div class="card-header">
-            <div class="course-icon"><i class="fas fa-random"></i></div>
-            <span class="pdf-title">随机过程</span>
-          </div>
-          <p>Poisson过程、Brown运动、离散Markov过程</p>
-          <a href="PDF/随机过程.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-arrow-right"></i></a>
         </div>
         
         <div class="pdf-card" style="animation-delay: 0.5s;">
           <div class="card-header">
-            <div class="course-icon"><i class="fas fa-chart-bar"></i></div>
-            <span class="pdf-title">数理统计</span>
+            <div class="course-icon"><i class="fas fa-random"></i></div>
+            <span class="pdf-title">随机过程</span>
           </div>
-          <p>包括点估计、区间估计、假设检验。目前完成：统计基础，点估计</p>
-          <a href="PDF/数理统计.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-arrow-right"></i></a>
+          <p>Poisson过程、Brown运动、离散Markov过程。</p>
+          <a href="PDF/随机过程.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-arrow-right"></i></a>
         </div>
-        
-        <div class="pdf-card" style="animation-delay: 0.6s;">
-          <div class="card-header">
-            <div class="course-icon"><i class="fas fa-dice"></i></div>
-            <span class="pdf-title">概率论(En)</span>
-          </div>
-          <p>大数定律和中心极限定理。目前完成：大数定律</p>
-          <a href="PDF/概率论1_En_ (1).pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-arrow-right"></i></a>
-        </div>
+
       </div>
     </section>
     
@@ -515,11 +515,17 @@
           </div>
           <p class="contact-info">zhihu.com/xuzhinan</p>
         </div>
+
+        <div class="contact-card clickable xhs-card" onclick="window.open('https://www.xiaohongshu.com/user/profile/5f1bfee20000000001008531', '_blank')">
+            <div class="contact-icon-wrapper">
+              <i class="fas fa-book"></i> </div>
+            <p class="contact-info">Little Red Book</p>
+          </div>
       </div>
     </section>
     
     <footer>
-      <p class="copyright">© 2025 徐知南而北游</p>
+      <p class="copyright">© 2026 徐知南而北游</p>
       <div class="quote-container">
         <p class="quote">Wir müssen wissen, Wir werden wissen. — David Hilbert</p>
       </div>
