@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>徐知南而北游 - 数学专业个人主页</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>徐知南而北游 | Academic Homepage</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --primary-color: #2c3e50;
-      --accent-color: #3498db;
-      --accent-hover: #2980b9;
-      --bg-color: #f8f9fb;
+      --primary-color: #1f2937;
+      --accent-color: #2563eb;
+      --accent-hover: #1d4ed8;
+      --bg-color: #f7f8fa;
       --card-bg: #ffffff;
-      --text-main: #2c3e50;
-      --text-sub: #5f6c7b;
-      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
-      --shadow-hover: 0 12px 32px rgba(52, 152, 219, 0.15);
-      --radius: 16px;
-      /* 小红书品牌色近似值，用于特殊hover效果，可选 */
-      --xhs-color: #ff2442; 
+      --text-main: #1f2937;
+      --text-sub: #6b7280;
+      --border-color: #e5e7eb;
+      --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.06);
+      --shadow-hover: 0 12px 32px rgba(37, 99, 235, 0.12);
+      --radius: 14px;
+      --xhs-color: #ff2442;
     }
 
     * {
@@ -29,125 +29,147 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background-color: var(--bg-color);
+      background: var(--bg-color);
       color: var(--text-main);
       line-height: 1.7;
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
-      background-image: 
-        linear-gradient(rgba(52, 152, 219, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(52, 152, 219, 0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
     }
 
-    /* 顶部装饰条 */
+    a {
+      color: inherit;
+    }
+
     .top-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 4px;
-      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-      z-index: 1000;
+      background: var(--primary-color);
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 980px;
       margin: 0 auto;
-      padding: 60px 20px;
-      animation: fadeIn 0.8s ease-out;
+      padding: 44px 20px 64px;
     }
 
-    /* 头部区域 */
     header {
-      text-align: center;
-      margin-bottom: 60px;
-      position: relative;
-    }
-
-    .avatar-wrapper {
-      position: relative;
-      width: 140px;
-      height: 140px;
-      margin: 0 auto 24px;
+      display: grid;
+      grid-template-columns: 132px 1fr;
+      gap: 28px;
+      align-items: center;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 24px;
     }
 
     .avatar-container {
-      width: 100%;
-      height: 100%;
+      width: 132px;
+      height: 132px;
       border-radius: 50%;
       overflow: hidden;
       border: 4px solid var(--card-bg);
       box-shadow: var(--shadow-md);
-      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      background: #f3f4f6;
     }
 
     .avatar-container img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
-    .avatar-wrapper:hover .avatar-container {
-      transform: scale(1.05);
-      box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.2);
-    }
-
-    h1 {
+    .header-main h1 {
       font-family: 'Noto Serif SC', serif;
-      font-size: 2.5rem;
+      font-size: 2.35rem;
       color: var(--primary-color);
-      margin-bottom: 12px;
       font-weight: 700;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
     }
 
-    .university {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
-      background: white;
-      border-radius: 50px;
-      box-shadow: var(--shadow-sm);
+    .subtitle {
+      color: var(--text-sub);
+      font-size: 1rem;
+      margin-bottom: 14px;
+    }
+
+    .affiliation {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      color: var(--text-sub);
       font-size: 0.95rem;
-      color: var(--text-sub);
+      margin-bottom: 18px;
     }
 
-    .university i {
-      color: var(--accent-color);
-    }
-
-    .university a {
-      color: var(--text-sub);
+    .affiliation a {
       text-decoration: none;
-      transition: color 0.2s;
+      color: var(--text-sub);
       font-weight: 500;
+      transition: color 0.2s ease;
     }
 
-    .university a:hover {
+    .affiliation a:hover {
       color: var(--accent-color);
     }
 
-    /* 分隔符 */
-    .divider {
-      color: #cbd5e0;
-      margin: 0 4px;
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    /* 章节通用样式 */
+    .nav a {
+      text-decoration: none;
+      padding: 7px 13px;
+      border: 1px solid var(--border-color);
+      border-radius: 999px;
+      color: var(--text-sub);
+      background: #fff;
+      font-size: 0.92rem;
+      transition: all 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--accent-color);
+      border-color: rgba(37, 99, 235, 0.35);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .intro {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 24px 26px;
+      margin-bottom: 38px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .intro p {
+      color: var(--text-sub);
+      font-size: 1rem;
+      max-width: 780px;
+    }
+
     .section {
-      margin-bottom: 50px;
+      margin-bottom: 42px;
     }
 
     .section-header {
       display: flex;
       align-items: center;
-      margin-bottom: 30px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
     }
 
     .section-title-group {
@@ -157,136 +179,163 @@
     }
 
     .section-icon {
-      width: 40px;
-      height: 40px;
-      background: rgba(52, 152, 219, 0.1);
+      width: 36px;
+      height: 36px;
+      background: #eff6ff;
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--accent-color);
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
 
     .section-header h2 {
       font-family: 'Noto Serif SC', serif;
-      font-size: 1.8rem;
+      font-size: 1.55rem;
       color: var(--primary-color);
       font-weight: 700;
     }
 
-    /* 卡片网格 */
-    .pdf-grid {
+    .section-note {
+      color: var(--text-sub);
+      font-size: 0.92rem;
+    }
+
+    .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
     }
 
-    .pdf-card {
+    .simple-card {
       background: var(--card-bg);
+      border: 1px solid var(--border-color);
       border-radius: var(--radius);
-      padding: 28px;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(0,0,0,0.03);
+      padding: 22px;
       box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      overflow: hidden;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.5s forwards;
+      transition: all 0.2s ease;
     }
 
-    .pdf-card:hover {
-      transform: translateY(-6px);
+    .simple-card:hover {
+      transform: translateY(-3px);
       box-shadow: var(--shadow-hover);
-      border-color: rgba(52, 152, 219, 0.2);
+      border-color: rgba(37, 99, 235, 0.25);
     }
 
-    .pdf-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 0;
-      background: var(--accent-color);
-      transition: height 0.3s ease;
+    .simple-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 8px;
+      color: var(--primary-color);
     }
 
-    .pdf-card:hover::before {
-      height: 100%;
-    }
-
-    .card-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+    .simple-card p {
+      color: var(--text-sub);
+      font-size: 0.94rem;
       margin-bottom: 16px;
     }
 
-    .course-icon {
-      width: 36px;
-      height: 36px;
-      background: #f0f7ff;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent-color);
-      font-size: 1.1rem;
-      transition: transform 0.3s;
-    }
-
-    .pdf-card:hover .course-icon {
-      background: var(--accent-color);
-      color: white;
-      transform: rotate(10deg);
-    }
-
-    .pdf-title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--text-main);
-      font-family: 'Noto Serif SC', serif;
-    }
-
-    .pdf-card p {
-      font-size: 0.95rem;
-      color: var(--text-sub);
-      margin-bottom: 24px;
-      flex-grow: 1;
-      line-height: 1.6;
-    }
-
-    .pdf-link {
-      align-self: flex-start;
+    .text-link {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 10px 20px;
-      background: white;
-      color: var(--accent-color);
-      border: 1px solid rgba(52, 152, 219, 0.3);
-      border-radius: 8px;
+      gap: 7px;
       text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
+      color: var(--accent-color);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .text-link:hover {
+      color: var(--accent-hover);
+    }
+
+    .note-block {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+
+    .note-block h3 {
+      font-size: 1.14rem;
+      color: var(--primary-color);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .note-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 10px;
+      list-style: none;
+    }
+
+    .note-list a {
+      display: block;
+      text-decoration: none;
+      padding: 10px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      color: var(--text-main);
+      background: #fafafa;
+      font-size: 0.94rem;
       transition: all 0.2s ease;
-      margin-top: auto; /* Push to bottom */
     }
 
-    .pdf-link:hover {
-      background: var(--accent-color);
-      color: white;
-      border-color: var(--accent-color);
+    .note-list a:hover {
+      color: var(--accent-color);
+      border-color: rgba(37, 99, 235, 0.3);
+      background: #fff;
     }
 
-    /* 联系区域 */
+    .resource-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .resource-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .resource-item strong {
+      color: var(--primary-color);
+      font-size: 1rem;
+    }
+
+    .resource-item span {
+      color: var(--text-sub);
+      font-size: 0.92rem;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .resource-item a {
+      flex-shrink: 0;
+      text-decoration: none;
+      color: var(--accent-color);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .resource-item a:hover {
+      color: var(--accent-hover);
+    }
+
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 稍微调整宽度适应3个 */
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
     }
 
@@ -311,7 +360,7 @@
     .contact-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-hover);
-      border-color: rgba(52, 152, 219, 0.2);
+      border-color: rgba(37, 99, 235, 0.2);
     }
 
     .contact-icon-wrapper {
@@ -334,34 +383,34 @@
       transform: scale(1.1);
     }
 
-    /* 小红书悬停特效 */
     .contact-card.xhs-card:hover .contact-icon-wrapper {
-        background: var(--xhs-color);
+      background: var(--xhs-color);
     }
+
     .contact-card.xhs-card:hover {
-        border-color: rgba(255, 36, 66, 0.2);
-        box-shadow: 0 12px 32px rgba(255, 36, 66, 0.15);
+      border-color: rgba(255, 36, 66, 0.2);
+      box-shadow: 0 12px 32px rgba(255, 36, 66, 0.15);
     }
 
     .contact-info {
       font-family: 'Inter', sans-serif;
       font-weight: 500;
       color: var(--text-main);
+      text-align: center;
+      word-break: break-word;
     }
 
-    /* 底部 */
     footer {
       text-align: center;
-      padding-top: 60px;
-      padding-bottom: 30px;
-      border-top: 1px solid rgba(0,0,0,0.05);
+      padding-top: 42px;
+      border-top: 1px solid var(--border-color);
       margin-top: 40px;
     }
 
     .copyright {
       color: var(--text-sub);
       font-size: 0.9rem;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .quote-container {
@@ -373,161 +422,262 @@
     .quote {
       font-family: 'Noto Serif SC', serif;
       font-style: italic;
-      color: #95a5a6;
-      font-size: 1.1rem;
+      color: #9ca3af;
+      font-size: 1.05rem;
       position: relative;
       display: inline-block;
       padding: 0 20px;
     }
 
-    .quote::before, .quote::after {
+    .quote::before,
+    .quote::after {
       content: '"';
       font-size: 2rem;
-      color: rgba(52, 152, 219, 0.2);
+      color: rgba(37, 99, 235, 0.18);
       position: absolute;
       top: -10px;
     }
-    .quote::before { left: -10px; }
-    .quote::after { right: -10px; }
 
-    /* 动画 */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .quote::before {
+      left: -10px;
     }
 
-    @keyframes fadeInUp {
-      to { opacity: 1; transform: translateY(0); }
+    .quote::after {
+      right: -10px;
     }
 
-    /* 移动端适配 */
     @media (max-width: 768px) {
-      .container { padding: 40px 16px; }
-      h1 { font-size: 2rem; }
-      .university { flex-direction: column; border-radius: 16px; width: 100%; }
-      .divider { display: none; }
-      .pdf-grid { grid-template-columns: 1fr; }
-      .section-header h2 { font-size: 1.5rem; }
+      .container {
+        padding: 32px 16px 52px;
+      }
+
+      header {
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+      }
+
+      .header-main h1 {
+        font-size: 2rem;
+      }
+
+      .affiliation,
+      .nav {
+        justify-content: center;
+      }
+
+      .resource-item {
+        align-items: flex-start;
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
   <div class="top-bar"></div>
-  
+
   <div class="container">
     <header>
-      <div class="avatar-wrapper">
-        <div class="avatar-container">
-          <img src="figure/1cover.jpg" alt="徐知南头像">
-        </div>
+      <div class="avatar-container">
+        <img src="figure/1cover.jpg" alt="徐知南头像" />
       </div>
-      
-      <h1>徐知南而北游</h1>
-      
-      <div class="university">
-        <i class="fas fa-university"></i>
-        <div>
-          <a href="https://www.xjtu.edu.cn/" target="_blank">西安交通大学</a>
-          <span class="divider">·</span>
-          <a href="https://math.xjtu.edu.cn/" target="_blank">数学与统计学院</a>
-          <span class="divider">·</span>
-          <span>大三在读</span> </div>
+
+      <div class="header-main">
+        <h1>徐知南而北游</h1>
+        <p class="subtitle">Academic Homepage · Mathematics and Statistics</p>
+        <div class="affiliation">
+          <a href="https://www.xjtu.edu.cn/" target="_blank">Xi'an Jiaotong University</a>
+          <span>·</span>
+          <a href="https://math.xjtu.edu.cn/" target="_blank">School of Mathematics and Statistics</a>
+          <span>·</span>
+          <span>Undergraduate Student</span>
+        </div>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#cv">CV</a>
+          <a href="#notes">Notes</a>
+          <a href="#homework">Homework</a>
+          <a href="#code">Code</a>
+          <a href="#exams">Exams</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
     </header>
-    
-    <section class="section">
-      <div class="section-header">
-        <div class="section-title-group">
-          <div class="section-icon"><i class="fas fa-book-open"></i></div>
-          <h2>Notes</h2>
-        </div>
-      </div>
-      
-      <div class="pdf-grid">
-        
-        <div class="pdf-card" style="animation-delay: 0.1s;">
-          <div class="card-header">
-            <div class="course-icon"><i class="fas fa-chart-line"></i></div>
-            <span class="pdf-title">回归分析</span>
+
+    <main>
+      <section class="intro">
+        <p>
+          This page collects my academic materials, including curriculum vitae, course notes,
+          homework solutions, code repositories, and exam review materials. My current interests
+          include analysis, statistics, machine learning, Bayesian inference, and statistical computation.
+        </p>
+      </section>
+
+      <section class="section" id="cv">
+        <div class="section-header">
+          <div class="section-title-group">
+            <div class="section-icon"><i class="far fa-id-card"></i></div>
+            <h2>CV</h2>
           </div>
-          <p>线性回归模型、最小二乘估计、诊断分析与模型选择。</p>
-          <a href="PDF/回归分析.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-arrow-right"></i></a>
         </div>
-        
-        <div class="pdf-card" style="animation-delay: 0.2s;">
-          <div class="card-header">
-            <div class="course-icon"><i class="fas fa-chart-bar"></i></div>
-            <span class="pdf-title">数理统计</span>
+        <div class="card-grid">
+          <div class="simple-card">
+            <h3>Curriculum Vitae</h3>
+            <p>A concise academic CV including education, coursework, projects, skills, and selected experiences.</p>
+            <a class="text-link" href="PDF/CV.pdf" target="_blank">View CV <i class="fas fa-arrow-right"></i></a>
           </div>
-          <p>包括点估计、区间估计、假设检验。目前完成：统计基础，点估计。</p>
-          <a href="PDF/数理统计.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-arrow-right"></i></a>
+          <div class="simple-card">
+            <h3>Research Interests</h3>
+            <p>Bayesian statistics, nonparametric statistics, stochastic processes, optimization, and machine learning.</p>
+          </div>
         </div>
-        
-        <div class="pdf-card" style="animation-delay: 0.3s;">
-          <div class="card-header">
-            <div class="course-icon"><i class="fas fa-project-diagram"></i></div>
-            <span class="pdf-title">渐进统计</span>
+      </section>
+
+      <section class="section" id="notes">
+        <div class="section-header">
+          <div class="section-title-group">
+            <div class="section-icon"><i class="fas fa-book-open"></i></div>
+            <h2>Notes</h2>
           </div>
-          <p>大样本性质、收敛模式、极大似然估计的渐进理论。</p>
-          <a href="PDF/渐进统计.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-arrow-right"></i></a>
+          <p class="section-note">Course notes by area</p>
         </div>
 
-        <div class="pdf-card" style="animation-delay: 0.4s;">
-          <div class="card-header">
-            <div class="course-icon"><i class="fas fa-wave-square"></i></div>
-            <span class="pdf-title">常微分方程</span>
-          </div>
-          <p>初等积分法、解的存在唯一性定理、线性系统。</p>
-          <a href="PDF/常微分方程.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-arrow-right"></i></a>
-        </div>
-        
-        <div class="pdf-card" style="animation-delay: 0.5s;">
-          <div class="card-header">
-            <div class="course-icon"><i class="fas fa-random"></i></div>
-            <span class="pdf-title">随机过程</span>
-          </div>
-          <p>Poisson过程、Brown运动、离散Markov过程。</p>
-          <a href="PDF/随机过程.pdf" class="pdf-link" target="_blank">阅读笔记 <i class="fas fa-arrow-right"></i></a>
+        <div class="note-block">
+          <h3><i class="fas fa-square-root-alt"></i> Analysis</h3>
+          <ul class="note-list">
+            <li><a href="PDF/Real Analysis.pdf" target="_blank">Real Analysis</a></li>
+            <li><a href="PDF/Complex Analysis.pdf" target="_blank">Complex Analysis</a></li>
+            <li><a href="PDF/Functional Analysis.pdf" target="_blank">Functional Analysis</a></li>
+          </ul>
         </div>
 
-      </div>
-    </section>
-    
-    <section class="section">
-      <div class="section-header">
-        <div class="section-title-group">
-          <div class="section-icon"><i class="fas fa-paper-plane"></i></div>
-          <h2>联系与合作</h2>
-        </div>
-      </div>
-      
-      <div class="contact-grid">
-        <div class="contact-card">
-          <div class="contact-icon-wrapper">
-            <i class="far fa-envelope"></i>
-          </div>
-          <p class="contact-info">22576459241@qq.com</p>
-        </div>
-        
-        <div class="contact-card clickable" onclick="window.open('https://www.zhihu.com/people/67-65-95-19', '_blank')">
-          <div class="contact-icon-wrapper">
-            <i class="fab fa-zhihu"></i>
-          </div>
-          <p class="contact-info">zhihu.com/xuzhinan</p>
+        <div class="note-block">
+          <h3><i class="fas fa-chart-line"></i> Statistics</h3>
+          <ul class="note-list">
+            <li><a href="PDF/Mathematical Statistics.pdf" target="_blank">Mathematical Statistics</a></li>
+            <li><a href="PDF/Probability Theory.pdf" target="_blank">Probability Theory</a></li>
+            <li><a href="PDF/Stochastic Processes.pdf" target="_blank">Stochastic Processes</a></li>
+            <li><a href="PDF/Regression Analysis.pdf" target="_blank">Regression Analysis</a></li>
+            <li><a href="PDF/Multivariate Statistics.pdf" target="_blank">Multivariate Statistics</a></li>
+            <li><a href="PDF/Optimization.pdf" target="_blank">Optimization</a></li>
+            <li><a href="PDF/Nonparametric Statistics.pdf" target="_blank">Nonparametric Statistics</a></li>
+            <li><a href="PDF/Bayesian Statistics.pdf" target="_blank">Bayesian Statistics</a></li>
+          </ul>
         </div>
 
-        <div class="contact-card clickable xhs-card" onclick="window.open('https://www.xiaohongshu.com/user/profile/5f1bfee20000000001008531', '_blank')">
+        <div class="note-block">
+          <h3><i class="fas fa-robot"></i> AI</h3>
+          <ul class="note-list">
+            <li><a href="PDF/Machine Learning.pdf" target="_blank">Machine Learning</a></li>
+            <li><a href="PDF/Deep Learning.pdf" target="_blank">Deep Learning</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="homework">
+        <div class="section-header">
+          <div class="section-title-group">
+            <div class="section-icon"><i class="far fa-file-alt"></i></div>
+            <h2>Homework</h2>
+          </div>
+        </div>
+        <div class="resource-list">
+          <div class="resource-item">
+            <div>
+              <strong>Selected Homework Solutions</strong>
+              <span>Selected solutions and write-ups for mathematical and statistical courses.</span>
+            </div>
+            <a href="Homework/index.html" target="_blank">Open</a>
+          </div>
+          <div class="resource-item">
+            <div>
+              <strong>Problem Sets Archive</strong>
+              <span>An organized archive of exercises, derivations, and supplementary notes.</span>
+            </div>
+            <a href="Homework/archive.html" target="_blank">Open</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="code">
+        <div class="section-header">
+          <div class="section-title-group">
+            <div class="section-icon"><i class="fas fa-code"></i></div>
+            <h2>Code</h2>
+          </div>
+        </div>
+        <div class="resource-list">
+          <div class="resource-item">
+            <div>
+              <strong>Course Code</strong>
+              <span>Implementations, simulations, numerical experiments, and reproducible examples.</span>
+            </div>
+            <a href="Code/index.html" target="_blank">Open</a>
+          </div>
+          <div class="resource-item">
+            <div>
+              <strong>GitHub</strong>
+              <span>Selected repositories for statistics, machine learning, and mathematical computation.</span>
+            </div>
+            <a href="https://github.com/" target="_blank">Visit</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="exams">
+        <div class="section-header">
+          <div class="section-title-group">
+            <div class="section-icon"><i class="fas fa-pen-nib"></i></div>
+            <h2>Exams</h2>
+          </div>
+        </div>
+        <div class="resource-list">
+          <div class="resource-item">
+            <div>
+              <strong>Exam Review Notes</strong>
+              <span>Review outlines, formula sheets, mock problems, and common mistakes.</span>
+            </div>
+            <a href="Exams/index.html" target="_blank">Open</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="section-header">
+          <div class="section-title-group">
+            <div class="section-icon"><i class="fas fa-paper-plane"></i></div>
+            <h2>Contact</h2>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
             <div class="contact-icon-wrapper">
-              <i class="fas fa-book"></i> </div>
+              <i class="far fa-envelope"></i>
+            </div>
+            <p class="contact-info">22576459241@qq.com</p>
+          </div>
+
+          <div class="contact-card clickable" onclick="window.open('https://www.zhihu.com/people/67-65-95-19', '_blank')">
+            <div class="contact-icon-wrapper">
+              <i class="fab fa-zhihu"></i>
+            </div>
+            <p class="contact-info">zhihu.com/xuzhinan</p>
+          </div>
+
+          <div class="contact-card clickable xhs-card" onclick="window.open('https://www.xiaohongshu.com/user/profile/5f1bfee20000000001008531', '_blank')">
+            <div class="contact-icon-wrapper">
+              <i class="fas fa-book"></i>
+            </div>
             <p class="contact-info">Rednote</p>
           </div>
-      </div>
-    </section>
-    
+        </div>
+      </section>
+    </main>
+
     <footer>
       <p class="copyright">© 2026 徐知南而北游</p>
       <div class="quote-container">
-        <p class="quote">Wir müssen wissen, Wir werden wissen. — David Hilbert</p>
+        <p class="quote">Wir müssen wissen, wir werden wissen. — David Hilbert</p>
       </div>
     </footer>
   </div>
