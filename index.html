@@ -4,8 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>徐知南而北游 | Academic Homepage</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+
   <style>
     :root {
       --primary-color: #1f2937;
@@ -13,6 +16,7 @@
       --accent-hover: #1d4ed8;
       --bg-color: #f7f8fa;
       --card-bg: #ffffff;
+      --soft-bg: #f9fafb;
       --text-main: #1f2937;
       --text-sub: #6b7280;
       --border-color: #e5e7eb;
@@ -21,6 +25,21 @@
       --shadow-hover: 0 12px 32px rgba(37, 99, 235, 0.12);
       --radius: 14px;
       --xhs-color: #ff2442;
+    }
+
+    body.dark-mode {
+      --primary-color: #f3f4f6;
+      --accent-color: #60a5fa;
+      --accent-hover: #93c5fd;
+      --bg-color: #0f172a;
+      --card-bg: #111827;
+      --soft-bg: #1e293b;
+      --text-main: #f3f4f6;
+      --text-sub: #cbd5e1;
+      --border-color: #334155;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+      --shadow-hover: 0 12px 32px rgba(96, 165, 250, 0.18);
     }
 
     * {
@@ -40,6 +59,7 @@
       line-height: 1.7;
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     a {
@@ -50,6 +70,33 @@
       width: 100%;
       height: 4px;
       background: var(--primary-color);
+      transition: background 0.3s ease;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      background: var(--card-bg);
+      color: var(--text-main);
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all 0.25s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+      color: var(--accent-color);
     }
 
     .container {
@@ -66,6 +113,7 @@
       padding-bottom: 36px;
       border-bottom: 1px solid var(--border-color);
       margin-bottom: 24px;
+      transition: border-color 0.3s ease;
     }
 
     .avatar-container {
@@ -75,7 +123,8 @@
       overflow: hidden;
       border: 4px solid var(--card-bg);
       box-shadow: var(--shadow-md);
-      background: #f3f4f6;
+      background: var(--soft-bg);
+      transition: border-color 0.3s ease, background 0.3s ease;
     }
 
     .avatar-container img {
@@ -132,7 +181,7 @@
       border: 1px solid var(--border-color);
       border-radius: 999px;
       color: var(--text-sub);
-      background: #fff;
+      background: var(--card-bg);
       font-size: 0.92rem;
       transition: all 0.2s ease;
     }
@@ -150,6 +199,7 @@
       padding: 24px 26px;
       margin-bottom: 38px;
       box-shadow: var(--shadow-sm);
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
 
     .intro p {
@@ -170,6 +220,7 @@
       margin-bottom: 18px;
       padding-bottom: 12px;
       border-bottom: 1px solid var(--border-color);
+      transition: border-color 0.3s ease;
     }
 
     .section-title-group {
@@ -181,7 +232,7 @@
     .section-icon {
       width: 36px;
       height: 36px;
-      background: #eff6ff;
+      background: rgba(37, 99, 235, 0.1);
       border-radius: 10px;
       display: flex;
       align-items: center;
@@ -256,6 +307,7 @@
       box-shadow: var(--shadow-sm);
       padding: 22px;
       margin-bottom: 18px;
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
 
     .note-block h3 {
@@ -281,7 +333,7 @@
       border: 1px solid var(--border-color);
       border-radius: 10px;
       color: var(--text-main);
-      background: #fafafa;
+      background: var(--soft-bg);
       font-size: 0.94rem;
       transition: all 0.2s ease;
     }
@@ -289,7 +341,7 @@
     .note-list a:hover {
       color: var(--accent-color);
       border-color: rgba(37, 99, 235, 0.3);
-      background: #fff;
+      background: var(--card-bg);
     }
 
     .resource-list {
@@ -307,6 +359,7 @@
       align-items: center;
       gap: 18px;
       box-shadow: var(--shadow-sm);
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
 
     .resource-item strong {
@@ -340,7 +393,7 @@
     }
 
     .contact-card {
-      background: white;
+      background: var(--card-bg);
       padding: 24px;
       border-radius: var(--radius);
       box-shadow: var(--shadow-sm);
@@ -350,7 +403,7 @@
       justify-content: center;
       transition: all 0.3s ease;
       cursor: default;
-      border: 1px solid transparent;
+      border: 1px solid var(--border-color);
     }
 
     .contact-card.clickable {
@@ -360,27 +413,39 @@
     .contact-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-hover);
-      border-color: rgba(37, 99, 235, 0.2);
+      border-color: rgba(37, 99, 235, 0.25);
     }
 
     .contact-icon-wrapper {
-      width: 56px;
-      height: 56px;
-      background: #f8fafc;
+      width: 58px;
+      height: 58px;
+      background: rgba(37, 99, 235, 0.08);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 16px;
-      font-size: 1.5rem;
+      font-size: 1.55rem;
       color: var(--accent-color);
-      transition: all 0.3s;
+      transition: all 0.3s ease;
+    }
+
+    .contact-icon-wrapper iconify-icon {
+      font-size: 1.55rem;
     }
 
     .contact-card:hover .contact-icon-wrapper {
       background: var(--accent-color);
       color: white;
       transform: scale(1.1);
+    }
+
+    .contact-card.qq-card:hover .contact-icon-wrapper {
+      background: #12b7f5;
+    }
+
+    .contact-card.zhihu-card:hover .contact-icon-wrapper {
+      background: #1772f6;
     }
 
     .contact-card.xhs-card:hover .contact-icon-wrapper {
@@ -394,8 +459,17 @@
 
     .contact-info {
       font-family: 'Inter', sans-serif;
-      font-weight: 500;
+      font-weight: 700;
       color: var(--text-main);
+      text-align: center;
+      word-break: break-word;
+      font-size: 1rem;
+    }
+
+    .contact-subinfo {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      margin-top: 4px;
       text-align: center;
       word-break: break-word;
     }
@@ -405,6 +479,7 @@
       padding-top: 42px;
       border-top: 1px solid var(--border-color);
       margin-top: 40px;
+      transition: border-color 0.3s ease;
     }
 
     .copyright {
@@ -422,7 +497,8 @@
     .quote {
       font-family: 'Noto Serif SC', serif;
       font-style: italic;
-      color: #9ca3af;
+      color: var(--text-sub);
+      opacity: 0.76;
       font-size: 1.05rem;
       position: relative;
       display: inline-block;
@@ -433,7 +509,7 @@
     .quote::after {
       content: '"';
       font-size: 2rem;
-      color: rgba(37, 99, 235, 0.18);
+      color: rgba(37, 99, 235, 0.22);
       position: absolute;
       top: -10px;
     }
@@ -451,10 +527,18 @@
         padding: 32px 16px 52px;
       }
 
+      .theme-toggle {
+        width: 44px;
+        height: 44px;
+        top: 14px;
+        right: 14px;
+      }
+
       header {
         grid-template-columns: 1fr;
         text-align: center;
         justify-items: center;
+        padding-top: 20px;
       }
 
       .header-main h1 {
@@ -466,6 +550,11 @@
         justify-content: center;
       }
 
+      .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
       .resource-item {
         align-items: flex-start;
         flex-direction: column;
@@ -473,13 +562,18 @@
     }
   </style>
 </head>
+
 <body>
   <div class="top-bar"></div>
+
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <i class="fas fa-moon"></i>
+  </button>
 
   <div class="container">
     <header>
       <div class="avatar-container">
-        <img src="figure/1cover.jpg" alt="徐知南头像" />
+        <img src="figure/avatar.jpg" alt="徐知南头像" />
       </div>
 
       <div class="header-main">
@@ -523,7 +617,7 @@
           <div class="simple-card">
             <h3>Curriculum Vitae</h3>
             <p>A concise academic CV including education, coursework, projects, skills, and selected experiences.</p>
-            <a class="text-link" href="PDF/CV.pdf" target="_blank">View CV <i class="fas fa-arrow-right"></i></a>
+            <a class="text-link" href="PDF/cv.pdf" target="_blank">View CV <i class="fas fa-arrow-right"></i></a>
           </div>
           <div class="simple-card">
             <h3>Research Interests</h3>
@@ -544,31 +638,31 @@
         <div class="note-block">
           <h3><i class="fas fa-square-root-alt"></i> Analysis</h3>
           <ul class="note-list">
-            <li><a href="PDF/Real Analysis.pdf" target="_blank">Real Analysis</a></li>
-            <li><a href="PDF/Complex Analysis.pdf" target="_blank">Complex Analysis</a></li>
-            <li><a href="PDF/Functional Analysis.pdf" target="_blank">Functional Analysis</a></li>
+            <li><a href="PDF/real-analysis.pdf" target="_blank">Real Analysis</a></li>
+            <li><a href="PDF/complex-analysis.pdf" target="_blank">Complex Analysis</a></li>
+            <li><a href="PDF/functional-analysis.pdf" target="_blank">Functional Analysis</a></li>
           </ul>
         </div>
 
         <div class="note-block">
           <h3><i class="fas fa-chart-line"></i> Statistics</h3>
           <ul class="note-list">
-            <li><a href="PDF/Mathematical Statistics.pdf" target="_blank">Mathematical Statistics</a></li>
-            <li><a href="PDF/Probability Theory.pdf" target="_blank">Probability Theory</a></li>
-            <li><a href="PDF/Stochastic Processes.pdf" target="_blank">Stochastic Processes</a></li>
-            <li><a href="PDF/Regression Analysis.pdf" target="_blank">Regression Analysis</a></li>
-            <li><a href="PDF/Multivariate Statistics.pdf" target="_blank">Multivariate Statistics</a></li>
-            <li><a href="PDF/Optimization.pdf" target="_blank">Optimization</a></li>
-            <li><a href="PDF/Nonparametric Statistics.pdf" target="_blank">Nonparametric Statistics</a></li>
-            <li><a href="PDF/Bayesian Statistics.pdf" target="_blank">Bayesian Statistics</a></li>
+            <li><a href="PDF/mathematical-statistics.pdf" target="_blank">Mathematical Statistics</a></li>
+            <li><a href="PDF/probability-theory.pdf" target="_blank">Probability Theory</a></li>
+            <li><a href="PDF/stochastic-processes.pdf" target="_blank">Stochastic Processes</a></li>
+            <li><a href="PDF/regression-analysis.pdf" target="_blank">Regression Analysis</a></li>
+            <li><a href="PDF/multivariate-statistics.pdf" target="_blank">Multivariate Statistics</a></li>
+            <li><a href="PDF/optimization.pdf" target="_blank">Optimization</a></li>
+            <li><a href="PDF/nonparametric-statistics.pdf" target="_blank">Nonparametric Statistics</a></li>
+            <li><a href="PDF/bayesian-statistics.pdf" target="_blank">Bayesian Statistics</a></li>
           </ul>
         </div>
 
         <div class="note-block">
           <h3><i class="fas fa-robot"></i> AI</h3>
           <ul class="note-list">
-            <li><a href="PDF/Machine Learning.pdf" target="_blank">Machine Learning</a></li>
-            <li><a href="PDF/Deep Learning.pdf" target="_blank">Deep Learning</a></li>
+            <li><a href="PDF/machine-learning.pdf" target="_blank">Machine Learning</a></li>
+            <li><a href="PDF/deep-learning.pdf" target="_blank">Deep Learning</a></li>
           </ul>
         </div>
       </section>
@@ -650,25 +744,28 @@
         </div>
 
         <div class="contact-grid">
-          <div class="contact-card">
+          <div class="contact-card clickable qq-card" onclick="window.open('https://wpa.qq.com/msgrd?v=3&uin=22576459241&site=qq&menu=yes', '_blank')">
             <div class="contact-icon-wrapper">
-              <i class="far fa-envelope"></i>
+              <i class="fab fa-qq"></i>
             </div>
-            <p class="contact-info">22576459241@qq.com</p>
+            <p class="contact-info">QQ</p>
+            <p class="contact-subinfo">22576459241</p>
           </div>
 
-          <div class="contact-card clickable" onclick="window.open('https://www.zhihu.com/people/67-65-95-19', '_blank')">
+          <div class="contact-card clickable zhihu-card" onclick="window.open('https://www.zhihu.com/people/67-65-95-19', '_blank')">
             <div class="contact-icon-wrapper">
               <i class="fab fa-zhihu"></i>
             </div>
-            <p class="contact-info">zhihu.com/xuzhinan</p>
+            <p class="contact-info">Zhihu</p>
+            <p class="contact-subinfo">@xuzhinan</p>
           </div>
 
           <div class="contact-card clickable xhs-card" onclick="window.open('https://www.xiaohongshu.com/user/profile/5f1bfee20000000001008531', '_blank')">
             <div class="contact-icon-wrapper">
-              <i class="fas fa-book"></i>
+              <iconify-icon icon="simple-icons:xiaohongshu"></iconify-icon>
             </div>
             <p class="contact-info">Rednote</p>
+            <p class="contact-subinfo">Xiaohongshu</p>
           </div>
         </div>
       </section>
@@ -681,5 +778,29 @@
       </div>
     </footer>
   </div>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
+    const themeIcon = themeToggle.querySelector('i');
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark-mode');
+      themeIcon.className = 'fas fa-sun';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+
+      if (body.classList.contains('dark-mode')) {
+        themeIcon.className = 'fas fa-sun';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        themeIcon.className = 'fas fa-moon';
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
 </body>
 </html>
