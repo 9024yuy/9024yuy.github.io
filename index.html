@@ -205,7 +205,7 @@
     .intro p {
       color: var(--text-sub);
       font-size: 1rem;
-      max-width: 780px;
+      max-width: 800px;
     }
 
     .section {
@@ -374,7 +374,17 @@
       margin-top: 2px;
     }
 
-    .resource-item a {
+    .resource-actions {
+      display: flex;
+      flex-shrink: 0;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .resource-actions a,
+    .resource-item > a {
       flex-shrink: 0;
       text-decoration: none;
       color: var(--accent-color);
@@ -382,7 +392,8 @@
       font-weight: 600;
     }
 
-    .resource-item a:hover {
+    .resource-actions a:hover,
+    .resource-item > a:hover {
       color: var(--accent-hover);
     }
 
@@ -559,6 +570,10 @@
         align-items: flex-start;
         flex-direction: column;
       }
+
+      .resource-actions {
+        justify-content: flex-start;
+      }
     }
   </style>
 </head>
@@ -573,7 +588,7 @@
   <div class="container">
     <header>
       <div class="avatar-container">
-        <img src="figure/avatar.jpg" alt="徐知南头像" />
+        <img src="figure/avatar.png" alt="徐知南头像" />
       </div>
 
       <div class="header-main">
@@ -589,6 +604,7 @@
         <nav class="nav" aria-label="Main navigation">
           <a href="#cv">CV</a>
           <a href="#notes">Notes</a>
+          <a href="#reports">Reports</a>
           <a href="#homework">Homework</a>
           <a href="#code">Code</a>
           <a href="#exams">Exams</a>
@@ -601,8 +617,9 @@
       <section class="intro">
         <p>
           This page collects my academic materials, including curriculum vitae, course notes,
-          homework solutions, code repositories, and exam review materials. My current interests
-          include analysis, statistics, machine learning, Bayesian inference, and statistical computation.
+          course reports, homework solutions, code, and exam review materials. My current interests
+          include analysis, statistics, machine learning, Bayesian inference, nonparametric statistics,
+          and statistical computation.
         </p>
       </section>
 
@@ -667,6 +684,38 @@
         </div>
       </section>
 
+      <section class="section" id="reports">
+        <div class="section-header">
+          <div class="section-title-group">
+            <div class="section-icon"><i class="far fa-file-pdf"></i></div>
+            <h2>Reports</h2>
+          </div>
+          <p class="section-note">Selected course reports</p>
+        </div>
+        <div class="resource-list">
+          <div class="resource-item">
+            <div>
+              <strong>Bayesian Statistics Report</strong>
+              <span>Course report on Bayesian statistics with accompanying computational code.</span>
+            </div>
+            <div class="resource-actions">
+              <a href="Reports/bayesian-statistics-report.pdf" target="_blank">PDF</a>
+              <a href="Code/bayesian-report-code.ipynb" target="_blank">Code</a>
+            </div>
+          </div>
+
+          <div class="resource-item">
+            <div>
+              <strong>Nonparametric Statistics Report</strong>
+              <span>Course report on nonparametric statistics.</span>
+            </div>
+            <div class="resource-actions">
+              <a href="Reports/nonparametric-statistics-report.pdf" target="_blank">PDF</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="homework">
         <div class="section-header">
           <div class="section-title-group">
@@ -702,17 +751,17 @@
         <div class="resource-list">
           <div class="resource-item">
             <div>
-              <strong>Course Code</strong>
-              <span>Implementations, simulations, numerical experiments, and reproducible examples.</span>
+              <strong>Bayesian Statistics Report Code</strong>
+              <span>Jupyter notebook used for the Bayesian statistics course report.</span>
             </div>
-            <a href="Code/index.html" target="_blank">Open</a>
+            <a href="Code/bayesian-report-code.ipynb" target="_blank">Notebook</a>
           </div>
           <div class="resource-item">
             <div>
-              <strong>GitHub</strong>
-              <span>Selected repositories for statistics, machine learning, and mathematical computation.</span>
+              <strong>GitHub Repository</strong>
+              <span>Source files and academic materials for this homepage.</span>
             </div>
-            <a href="https://github.com/" target="_blank">Visit</a>
+            <a href="https://github.com/9024yuy/9024yuy.github.io" target="_blank">Visit</a>
           </div>
         </div>
       </section>
