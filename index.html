@@ -397,6 +397,34 @@
       color: var(--accent-hover);
     }
 
+    .resource-actions a {
+      padding: 6px 10px;
+      border: 1px solid rgba(37, 99, 235, 0.22);
+      border-radius: 999px;
+      background: var(--soft-bg);
+      line-height: 1;
+    }
+
+    .resource-actions a:hover {
+      background: var(--card-bg);
+      border-color: rgba(37, 99, 235, 0.45);
+    }
+
+    .resource-item.compact {
+      align-items: center;
+      padding: 12px 14px;
+    }
+
+    .course-row strong {
+      white-space: nowrap;
+      font-size: 0.98rem;
+    }
+
+    .course-row .resource-actions a {
+      padding: 5px 9px;
+      font-size: 0.86rem;
+    }
+
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -602,12 +630,8 @@
           <span>Undergraduate Student</span>
         </div>
         <nav class="nav" aria-label="Main navigation">
-          <a href="#cv">CV</a>
-          <a href="#notes">Notes</a>
-          <a href="#reports">Reports</a>
-          <a href="#homework">Homework</a>
-          <a href="#code">Code</a>
-          <a href="#exams">Exams</a>
+          <a href="#courses">Courses</a>
+          <a href="#research">Research</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
@@ -616,170 +640,167 @@
     <main>
       <section class="intro">
         <p>
-          This page collects my academic materials, including curriculum vitae, course notes,
-          course reports, homework solutions, code, and exam review materials. My current interests
-          include analysis, statistics, machine learning, Bayesian inference, nonparametric statistics,
-          and statistical computation.
+          This page collects my academic materials by course and project, including notes,
+           code, homework and reports. My current interests include
+          analysis, statistics, machine learning.
         </p>
       </section>
 
-      <section class="section" id="cv">
-        <div class="section-header">
-          <div class="section-title-group">
-            <div class="section-icon"><i class="far fa-id-card"></i></div>
-            <h2>CV</h2>
-          </div>
-        </div>
-        <div class="card-grid">
-          <div class="simple-card">
-            <h3>Curriculum Vitae</h3>
-            <p>A concise academic CV including education, coursework, projects, skills, and selected experiences.</p>
-            <a class="text-link" href="PDF/cv.pdf" target="_blank">View CV <i class="fas fa-arrow-right"></i></a>
-          </div>
-          <div class="simple-card">
-            <h3>Research Interests</h3>
-            <p>Bayesian statistics, nonparametric statistics, stochastic processes, optimization, and machine learning.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="notes">
+      <section class="section" id="courses">
         <div class="section-header">
           <div class="section-title-group">
             <div class="section-icon"><i class="fas fa-book-open"></i></div>
-            <h2>Notes</h2>
+            <h2>Courses & Materials</h2>
           </div>
-          <p class="section-note">Course notes by area</p>
+          <p class="section-note">Compact links by course</p>
         </div>
 
         <div class="note-block">
           <h3><i class="fas fa-square-root-alt"></i> Analysis</h3>
-          <ul class="note-list">
-            <li><a href="PDF/real-analysis.pdf" target="_blank">Real Analysis</a></li>
-            <li><a href="PDF/complex-analysis.pdf" target="_blank">Complex Analysis</a></li>
-            <li><a href="PDF/functional-analysis.pdf" target="_blank">Functional Analysis</a></li>
-          </ul>
+          <div class="resource-list">
+            <div class="resource-item compact course-row">
+              <strong>Mathematical Analysis</strong>
+              <div class="resource-actions">
+                <a href="courses/mathematical-analysis/notes/mathematical-analysis-notes.pdf" target="_blank">Note</a>
+                <a href="courses/mathematical-analysis/homework/mathematical-analysis-homework.pdf" target="_blank">HW</a>
+                <a href="courses/mathematical-analysis/exams/mathematical-analysis-exam.pdf" target="_blank">Exam</a>
+              </div>
+            </div>
+
+            <div class="resource-item compact course-row">
+              <strong>Real Analysis</strong>
+              <div class="resource-actions">
+                <a href="courses/real-analysis/notes/real-analysis-notes.pdf" target="_blank">Note</a>
+                <a href="courses/real-analysis/homework/real-analysis-homework.pdf" target="_blank">HW</a>
+                <a href="courses/real-analysis/exams/real-analysis-exam.pdf" target="_blank">Exam</a>
+              </div>
+            </div>
+
+            <div class="resource-item compact course-row">
+              <strong>Complex Analysis</strong>
+              <div class="resource-actions">
+                <a href="courses/complex-analysis/notes/complex-analysis-notes.pdf" target="_blank">Note</a>
+                <a href="courses/complex-analysis/homework/complex-analysis-homework.pdf" target="_blank">HW</a>
+                <a href="courses/complex-analysis/exams/complex-analysis-exam.pdf" target="_blank">Exam</a>
+              </div>
+            </div>
+
+            <div class="resource-item compact course-row">
+              <strong>Functional Analysis</strong>
+              <div class="resource-actions">
+                <a href="courses/functional-analysis/notes/functional-analysis-notes.pdf" target="_blank">Note</a>
+                <a href="courses/functional-analysis/homework/functional-analysis-homework.pdf" target="_blank">HW</a>
+                <a href="courses/functional-analysis/exams/functional-analysis-exam.pdf" target="_blank">Exam</a>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="note-block">
-          <h3><i class="fas fa-chart-line"></i> Statistics</h3>
-          <ul class="note-list">
-            <li><a href="PDF/mathematical-statistics.pdf" target="_blank">Mathematical Statistics</a></li>
-            <li><a href="PDF/probability-theory.pdf" target="_blank">Probability Theory</a></li>
-            <li><a href="PDF/stochastic-processes.pdf" target="_blank">Stochastic Processes</a></li>
-            <li><a href="PDF/regression-analysis.pdf" target="_blank">Regression Analysis</a></li>
-            <li><a href="PDF/multivariate-statistics.pdf" target="_blank">Multivariate Statistics</a></li>
-            <li><a href="PDF/optimization.pdf" target="_blank">Optimization</a></li>
-            <li><a href="PDF/nonparametric-statistics.pdf" target="_blank">Nonparametric Statistics</a></li>
-            <li><a href="PDF/bayesian-statistics.pdf" target="_blank">Bayesian Statistics</a></li>
-          </ul>
+          <h3><i class="fas fa-chart-line"></i> Probability and Statistics</h3>
+          <div class="resource-list">
+            <div class="resource-item compact course-row">
+              <strong>Probability Theory</strong>
+              <div class="resource-actions">
+                <a href="courses/probability-theory/notes/probability-theory-note-1.pdf" target="_blank">Note 1</a>
+                <a href="courses/probability-theory/notes/probability-theory-note-2.pdf" target="_blank">Note 2</a>
+                <a href="courses/probability-theory/notes/probability-theory-note-3.pdf" target="_blank">Note 3</a>
+              </div>
+            </div>
+
+            <div class="resource-item compact course-row">
+              <strong>Mathematical Statistics</strong>
+              <div class="resource-actions">
+                <a href="courses/mathematical-statistics/notes/mathematical-statistics-notes.pdf" target="_blank">Note</a>
+              </div>
+            </div>
+
+            <div class="resource-item compact course-row">
+              <strong>Stochastic Processes</strong>
+              <div class="resource-actions">
+                <a href="courses/stochastic-processes/notes/stochastic-processes-notes.pdf" target="_blank">Note</a>
+                <a href="courses/stochastic-processes/exams/stochastic-processes-exam.pdf" target="_blank">Exam</a>
+              </div>
+            </div>
+
+            <div class="resource-item compact course-row">
+              <strong>Regression Analysis</strong>
+              <div class="resource-actions">
+                <a href="courses/regression-analysis/notes/regression-analysis-notes.pdf" target="_blank">Note</a>
+              </div>
+            </div>
+
+            <div class="resource-item compact course-row">
+              <strong>Nonparametric Statistics</strong>
+              <div class="resource-actions">
+                <a href="courses/nonparametric-statistics/notes/nonparametric-statistics-notes.pdf" target="_blank">Note</a>
+                <a href="https://github.com/9024yuy/9024yuy.github.io/tree/main/courses/nonparametric-statistics/code" target="_blank">Code</a>
+                <a href="courses/nonparametric-statistics/reports/nonparametric-statistics-report.pdf" target="_blank">Report</a>
+              </div>
+            </div>
+
+            <div class="resource-item compact course-row">
+              <strong>Bayesian Statistics</strong>
+              <div class="resource-actions">
+                <a href="https://github.com/9024yuy/9024yuy.github.io/tree/main/courses/bayesian-statistics/code" target="_blank">Code</a>
+                <a href="courses/bayesian-statistics/homework/bayesian-statistics-homework.pdf" target="_blank">HW</a>
+                <a href="courses/bayesian-statistics/reports/bayesian-statistics-report.pdf" target="_blank">Report</a>
+              </div>
+            </div>
+
+            <div class="resource-item compact course-row">
+              <strong>Time Series Analysis</strong>
+              <div class="resource-actions">
+                <a href="courses/time-series/notes/time-series-notes.pdf" target="_blank">Note</a>
+                <a href="https://github.com/9024yuy/9024yuy.github.io/tree/main/courses/time-series/code" target="_blank">Code</a>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="note-block">
-          <h3><i class="fas fa-robot"></i> AI</h3>
-          <ul class="note-list">
-            <li><a href="PDF/machine-learning.pdf" target="_blank">Machine Learning</a></li>
-            <li><a href="PDF/deep-learning.pdf" target="_blank">Deep Learning</a></li>
-          </ul>
-        </div>
-      </section>
+          <h3><i class="fas fa-laptop-code"></i> Computation, Optimization, and AI</h3>
+          <div class="resource-list">
+            <div class="resource-item compact course-row">
+              <strong>Optimization</strong>
+              <div class="resource-actions">
+                <a href="courses/optimization/homework/optimization-homework.pdf" target="_blank">HW</a>
+              </div>
+            </div>
 
-      <section class="section" id="reports">
-        <div class="section-header">
-          <div class="section-title-group">
-            <div class="section-icon"><i class="far fa-file-pdf"></i></div>
-            <h2>Reports</h2>
-          </div>
-          <p class="section-note">Selected course reports</p>
-        </div>
-        <div class="resource-list">
-          <div class="resource-item">
-            <div>
-              <strong>Bayesian Statistics Report</strong>
-              <span>Course report on Bayesian statistics with accompanying computational code.</span>
+            <div class="resource-item compact course-row">
+              <strong>Machine Learning</strong>
+              <div class="resource-actions">
+                <a href="courses/machine-learning/notes/machine-learning-notes.pdf" target="_blank">Note</a>
+                <a href="https://github.com/9024yuy/9024yuy.github.io/tree/main/courses/machine-learning/code" target="_blank">Code</a>
+                <a href="courses/machine-learning/reports/machine-learning-report.pdf" target="_blank">Report</a>
+              </div>
             </div>
-            <div class="resource-actions">
-              <a href="Reports/bayesian-statistics-report.pdf" target="_blank">PDF</a>
-              <a href="Code/bayesian-report-code.ipynb" target="_blank">Code</a>
-            </div>
-          </div>
 
-          <div class="resource-item">
-            <div>
-              <strong>Nonparametric Statistics Report</strong>
-              <span>Course report on nonparametric statistics.</span>
-            </div>
-            <div class="resource-actions">
-              <a href="Reports/nonparametric-statistics-report.pdf" target="_blank">PDF</a>
+            <div class="resource-item compact course-row">
+              <strong>Deep Learning</strong>
+              <div class="resource-actions">
+                <a href="courses/deep-learning/notes/deep-learning-notes.pdf" target="_blank">Note</a>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="homework">
+      <section class="section" id="research">
         <div class="section-header">
           <div class="section-title-group">
-            <div class="section-icon"><i class="far fa-file-alt"></i></div>
-            <h2>Homework</h2>
+            <div class="section-icon"><i class="fas fa-microscope"></i></div>
+            <h2>Research</h2>
           </div>
         </div>
-        <div class="resource-list">
-          <div class="resource-item">
-            <div>
-              <strong>Selected Homework Solutions</strong>
-              <span>Selected solutions and write-ups for mathematical and statistical courses.</span>
-            </div>
-            <a href="Homework/index.html" target="_blank">Open</a>
-          </div>
-          <div class="resource-item">
-            <div>
-              <strong>Problem Sets Archive</strong>
-              <span>An organized archive of exercises, derivations, and supplementary notes.</span>
-            </div>
-            <a href="Homework/archive.html" target="_blank">Open</a>
-          </div>
-        </div>
-      </section>
 
-      <section class="section" id="code">
-        <div class="section-header">
-          <div class="section-title-group">
-            <div class="section-icon"><i class="fas fa-code"></i></div>
-            <h2>Code</h2>
-          </div>
-        </div>
         <div class="resource-list">
-          <div class="resource-item">
+          <div class="resource-item compact">
             <div>
-              <strong>Bayesian Statistics Report Code</strong>
-              <span>Jupyter notebook used for the Bayesian statistics course report.</span>
+              <strong>Factor-adjusted AMDP</strong>
+              <span>A project on factor adjustment for high-dimensional mediation analysis, with emphasis on latent confounding, null calibration, and FDR control.</span>
             </div>
-            <a href="Code/bayesian-report-code.ipynb" target="_blank">Notebook</a>
-          </div>
-          <div class="resource-item">
-            <div>
-              <strong>GitHub Repository</strong>
-              <span>Source files and academic materials for this homepage.</span>
-            </div>
-            <a href="https://github.com/9024yuy/9024yuy.github.io" target="_blank">Visit</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="exams">
-        <div class="section-header">
-          <div class="section-title-group">
-            <div class="section-icon"><i class="fas fa-pen-nib"></i></div>
-            <h2>Exams</h2>
-          </div>
-        </div>
-        <div class="resource-list">
-          <div class="resource-item">
-            <div>
-              <strong>Exam Review Notes</strong>
-              <span>Review outlines, formula sheets, mock problems, and common mistakes.</span>
-            </div>
-            <a href="Exams/index.html" target="_blank">Open</a>
           </div>
         </div>
       </section>
